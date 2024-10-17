@@ -24,6 +24,23 @@ python data/feats_preprocessor.py
 ```
 This would not take long time
 
+### Train model
+Hyperparameters, such as `--train_system`, `--batch_size`, `--init_lr`, `--epoch` can be set. 
+Their default values are set as 'AgNi', 256, 0.00075 and 1000, respectively, now.
+```
+python train.py
+```
+
+### Evaluate trained model
+Trained model can be evaluated, specifying training condition through `--ckpt_filename`, `--train_system`, `--extrap` settings fields. Results in the paper can be reproduced with `--ckpt_filename='ResCBAM_best_checkpoint.pkl'`.
+```
+python analysis/performance.py
+```
+
+### XAI interpretation
+
+
+
 ## Data
 All data used in this research can be downloaded from the link below.
 
