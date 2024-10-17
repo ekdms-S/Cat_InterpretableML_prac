@@ -1,4 +1,4 @@
-# cat_LSV_interpretableML
+# Cat_InterpretableML
 data preprocessing, model implementation and GradCAM within interpretable ML framework
 
 ## Installation
