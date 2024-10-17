@@ -32,14 +32,20 @@ python train.py
 ```
 
 ### Evaluate trained model
-Trained model can be evaluated, specifying training condition through `--ckpt_filename`, `--train_system`, `--extrap` settings fields. Results in the paper can be reproduced with `--ckpt_filename='ResCBAM_best_checkpoint.pkl'`.
+Trained model can be evaluated, specifying training conditions through `--ckpt_filename`, `--train_system`, `--extrap` settings fields. Results in the paper can be reproduced with `--ckpt_filename='ResCBAM_best_checkpoint.pkl'`.
 ```
 python analysis/performance.py
 ```
 
 ### XAI interpretation
-
-
+After training model, you can obtain Grad-CAM attention map, specifying training and operating conditions. This is similar to the evaluation option above. 
+```
+python analysis/XAI.py --catalyst='Ag' --voltage=-3.2
+```
+One may want to interpret averaged Grad-CAM attention map. Then, add `--ensemble` field as below. Randomly initialized models discussed in the paper are in `..\saved\AgNi\ensemble` directory, now. `--ensemble` option autonmatically load those models and average their results.
+```
+python analysis/XAI.py --catalyst='Ag' --voltage=-3.2 --ensemble
+```
 
 ## Data
 All data used in this research can be downloaded from the link below.
